@@ -1,13 +1,13 @@
 name: Infrastructure
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  #   paths:
-  #     - 'infra/**'
-  #     - '.github/workflows/infrastructure.yml'
-  #     - '.github/workflows/reusable-terraform.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'infra/**'
+      - '.github/workflows/infrastructure.yml'
+      - '.github/workflows/reusable-terraform.yml'
   workflow_dispatch:
 
 permissions:
