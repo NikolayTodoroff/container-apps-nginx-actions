@@ -73,6 +73,7 @@ jobs:
           directory: infra/
           output_format: sarif
           output_file_path: checkov.sarif
+          config_file: .checkov.yml
           soft_fail: true
 
       - name: Upload Checkov SARIF

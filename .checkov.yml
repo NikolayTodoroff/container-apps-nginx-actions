@@ -1,0 +1,15 @@
+framework:
+  - terraform
+
+skip-check:
+  - CKV2_AZURE_32   # Private endpoint requires VNet integration, not justified for demo
+  - CKV_AZURE_189   # Public access needed — workflows access Key Vault from GitHub-hosted runners
+  - CKV_AZURE_109   # Firewall rules would block GitHub-hosted runners with dynamic IPs
+  - CKV_AZURE_237   # Dedicated data endpoints require Premium SKU
+  - CKV_AZURE_139   # Public access needed — GitHub-hosted runners push images over public internet
+  - CKV_AZURE_233   # Zone redundancy requires Premium SKU, Standard chosen for cost
+  - CKV_AZURE_164   # Content trust requires Premium SKU and Docker Notary setup
+  - CKV_AZURE_166   # Image quarantine is a Preview feature requiring Premium SKU
+  - CKV_AZURE_165   # Geo-replication requires Premium SKU, single-region sufficient for demo
+  - CKV_AZURE_167   # Retention policy requires Premium SKU
+
