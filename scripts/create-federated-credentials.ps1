@@ -13,7 +13,7 @@ $environments = @("dev", "prod")
 
 # Repo validation before creating credentials
 try {
-    $response = Invoke-RestMethod -Uri "https://api.github.com/repos/$GitHubOrg/$RepoName" -ErrorAction Stop
+    Invoke-RestMethod -Uri "https://api.github.com/repos/$GitHubOrg/$RepoName" -ErrorAction Stop | Out-Null
     Write-Host "Repository $GitHubOrg/$RepoName found."
 } catch {
     Write-Error "Repository $GitHubOrg/$RepoName not found. Check the name and try again."
